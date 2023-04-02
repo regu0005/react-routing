@@ -1,0 +1,12 @@
+{
+  "name": "react-netlify",
+  "version": "1.0.0",
+  "description": "React routing with Netlify",
+  "main": "test.js",
+  "scripts": {
+    "build": "rm -rf ./dist/* && mkdir ./dist/css && cp ./index.html ./dist/index.html && cp ./css/main.css ./dist/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
