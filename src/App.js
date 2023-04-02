@@ -11,21 +11,38 @@ import { Beers } from './components/Beers';
 import { NotFound } from './components/NotFound';
 import { Appliances } from './components/Appliances';
 import { UserDetail } from './components/UserDetail';
+import { ApplianceDetail } from './components/ApplianceDetail';
 
 function App() {
   
-  const DATA_USERS_URL = 'https://random-data-api.com/api/v2/users?size=5';
-
+  // USERS DATA
+  const USERS_URL = 'https://random-data-api.com/api/v2/users?size=20';
   const [ users, setUsers ] = useState([]);
-
   useEffect( () => {
-    fetch(DATA_USERS_URL)
+    fetch(USERS_URL)
       .then(
         (res) => res.json()
       )
       .then(
         (data) => {
           setUsers(data)
+        }
+      )
+      .catch(function(err){
+       
+      })
+  }, [] );
+  // APPLIANCES DATA
+  const APPLIANCES_URL = 'https://random-data-api.com/api/v2/appliances?size=20';
+  const [ appliances, setAppliances ] = useState([]);
+  useEffect( () => {
+    fetch(APPLIANCES_URL)
+      .then(
+        (res) => res.json()
+      )
+      .then(
+        (data) => {
+          setAppliances(data)
           console.log(data);
         }
       )
@@ -44,12 +61,14 @@ function App() {
       <main className="main">
         <Routes>
             <Route path='/' element={ <Home />}></Route>
+            <Route path='/index.html' element={ <Home />}></Route>
             
             <Route exact path='/users' element={ <Users users={users} />}>
               <Route path='/users/:id' element={ <UserDetail users={users} />} />
             </Route>
-            
-            <Route path='/appliances' element={ <Appliances />}></Route>
+            <Route path='/appliances' element={ <Appliances appliances={appliances} />}>
+              <Route path='/appliances/:id' element={ <ApplianceDetail appliances={appliances} />} />
+            </Route>
             <Route path='/beers' element={ <Beers />}></Route>
             <Route path='*' element={ <NotFound />}></Route>
         </Routes>

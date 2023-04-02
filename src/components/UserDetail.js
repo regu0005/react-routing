@@ -22,36 +22,4 @@ export const UserDetail = ({ users }) => {
         )}
       </div>
     );
-  };
-
-
-// import React from 'react';
-
-// const UserDetail = ({ user }) => {
-//   return (
-//     <div>
-//       <h1>User Details</h1>
-//       <p>ID: {user.id}</p>
-//       <p>Name: {user.first_name}</p>
-//     </div>
-//   );
-// };
-
-// export default UserDetail;
-
-// import React, { useEffect, useState } from 'react'
-
-// export const UserDetail = ( {match} ) => {
-    
-//     const [user, setUser] = useState({});
-
-//   return (
-//     <div>
-//         <h1>User Detail</h1>
-//         <h2>{user.first_name} {user.last_name}</h2>
-//         <p>{user.email}</p>
-//         <p>{user.phone_number}</p>
-//         <p>{user.address}</p>
-//     </div>
-//   )
-// }
+};

@@ -14,11 +14,11 @@ export const Users = ( { users } ) => {
             <ul className="user-list">
               {
                 users.map((user) => (
-                    <li key={user.id} >
-                      <Link to={`/users/${user.id}`} >
-                          {user.name} {user.first_name} {user.last_name}
-                      </Link>
+                  <Link key={user.id} to={`/users/${user.id}`} >
+                    <li>
+                      {user.name} {user.first_name} {user.last_name}
                     </li>
+                  </Link>
                 ))
               }
             </ul>
