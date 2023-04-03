@@ -70,7 +70,7 @@ function App() {
               <Route path='/appliances/:id' element={ <ApplianceDetail appliances={appliances} />} />
             </Route>
             <Route path='/beers' element={ <Beers />}></Route>
-            <Route path='*' element={ <NotFound />}></Route>
+            <Route path='/*' element={ <NotFound />}></Route>
         </Routes>
       </main>
     </div>
